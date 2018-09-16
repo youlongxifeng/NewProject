@@ -10,6 +10,7 @@ import com.company.project.android.mvp.BaseView;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import me.yokeyword.fragmentation.SupportActivity;
 
 /**
  * @author Administrator
@@ -22,7 +23,7 @@ import butterknife.Unbinder;
  */
 
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView {
+public abstract class BaseActivity<P extends BasePresenter> extends SupportActivity implements BaseView {
     public P mPresenter;
     Unbinder mUnbinder;
 

@@ -1,6 +1,7 @@
 package com.company.project.android.base;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,6 +10,9 @@ import android.view.ViewGroup;
 
 import com.company.project.android.mvp.BasePresenter;
 import com.company.project.android.mvp.BaseView;
+import com.company.project.android.ui.fragment.home.HomeFragment;
+
+import me.yokeyword.fragmentation.SupportFragment;
 
 /**
  * @author Administrator
@@ -20,8 +24,20 @@ import com.company.project.android.mvp.BaseView;
  * @class describe
  */
 
-public abstract class BaseMvpFragment<P extends BasePresenter> extends Fragment implements BaseView {
+public abstract class BaseMvpFragment<P extends BasePresenter> extends SupportFragment implements BaseView {
     protected P mPresenter;
+    protected OnBackToFirstListener _mBackToFirstListener;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnBackToFirstListener) {
+            _mBackToFirstListener = (OnBackToFirstListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnBackToFirstListener");
+        }
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +69,7 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends Fragment 
         if (mPresenter != null) {
             mPresenter.detachView();
         }
+        _mBackToFirstListener = null;
     }
 
     protected abstract P createPresenter();
@@ -62,4 +79,27 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends Fragment 
     protected abstract void initView(View view);
 
     protected abstract void initDate();
+
+    /**
+     * 处理回退事件
+     *
+     * @return
+     */
+    @Override
+    public boolean onBackPressedSupport() {
+        if (getChildFragmentManager().getBackStackEntryCount() > 1) {
+            popChild();
+        } else {
+            if (this instanceof HomeFragment) {   // 如果是 第一个Fragment 则退出app
+                _mActivity.finish();
+            } else {                                    // 如果不是,则回到第一个Fragment
+                _mBackToFirstListener.onBackToFirstFragment();
+            }
+        }
+        return true;
+    }
+
+    public interface OnBackToFirstListener {
+        void onBackToFirstFragment();
+    }
 }

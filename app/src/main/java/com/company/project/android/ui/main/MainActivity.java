@@ -7,17 +7,26 @@ import android.widget.TextView;
 import com.company.project.android.R;
 import com.company.project.android.base.BaseActivity;
 import com.company.project.android.bean.Gank;
+import com.company.project.android.ui.fragment.home.HomeFragment;
 import com.company.project.android.utils.LogUtils;
+import com.company.project.android.widget.BottomBar;
 
 import java.lang.ref.WeakReference;
 
 import butterknife.BindView;
+import me.yokeyword.fragmentation.SupportFragment;
 
 
 public class MainActivity extends BaseActivity<MainPresenter>
         implements MainContract.View {
     private final static String TAG = MainActivity.class.getSimpleName();
+    public static final int FIRST = 0;
+    public static final int SECOND = 1;
+    public static final int THIRD = 2;
+    public static final int FOURTH = 3;
 
+    private SupportFragment[] mFragments = new SupportFragment[4];
+    private BottomBar mBottomBar;
 
     @Override
     public MainPresenter setPresenter() {
@@ -31,7 +40,27 @@ public class MainActivity extends BaseActivity<MainPresenter>
 
     @Override
     public void initView() {
+        SupportFragment firstFragment = findFragment(HomeFragment.class);
+        if (firstFragment == null) {
+            mFragments[FIRST] = HomeFragment.newInstance();
+            mFragments[SECOND] = HomeFragment.newInstance();
+            mFragments[THIRD] = HomeFragment.newInstance();
+            mFragments[FOURTH] = HomeFragment.newInstance();
 
+            loadMultipleRootFragment(R.id.fl_container, FIRST,
+                    mFragments[FIRST],
+                    mFragments[SECOND],
+                    mFragments[THIRD],
+                    mFragments[FOURTH]);
+        } else {
+            // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
+
+            // 这里我们需要拿到mFragments的引用
+            mFragments[FIRST] = firstFragment;
+            mFragments[SECOND] = findFragment(HomeFragment.class);
+            mFragments[THIRD] = findFragment(HomeFragment.class);
+            mFragments[FOURTH] = findFragment(HomeFragment.class);
+        }
 
     }
 
