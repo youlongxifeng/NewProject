@@ -6,7 +6,8 @@
 
     <dimen name="bottombar_height">48dp</dimen>
     <dimen name="bottombar_wechat_height">52dp</dimen>
-
+    <dimen name="x_10">10px</dimen>
+    <dimen name="x_12">12px</dimen>
     <dimen name="x_16">16px</dimen>
     <dimen name="x_20">20px</dimen>
     <dimen name="x_30">30px</dimen>

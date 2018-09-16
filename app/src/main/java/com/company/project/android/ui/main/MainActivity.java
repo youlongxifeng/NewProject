@@ -8,6 +8,7 @@ import com.company.project.android.R;
 import com.company.project.android.base.BaseActivity;
 import com.company.project.android.bean.Gank;
 import com.company.project.android.ui.fragment.home.HomeFragment;
+import com.company.project.android.ui.fragment.signin.SigninFragment;
 import com.company.project.android.utils.LogUtils;
 import com.company.project.android.widget.BottomBar;
 
@@ -42,7 +43,7 @@ public class MainActivity extends BaseActivity<MainPresenter>
     public void initView() {
         SupportFragment firstFragment = findFragment(HomeFragment.class);
         if (firstFragment == null) {
-            mFragments[FIRST] = HomeFragment.newInstance();
+            mFragments[FIRST] = SigninFragment.newInstance();
             mFragments[SECOND] = HomeFragment.newInstance();
             mFragments[THIRD] = HomeFragment.newInstance();
             mFragments[FOURTH] = HomeFragment.newInstance();
@@ -54,7 +55,6 @@ public class MainActivity extends BaseActivity<MainPresenter>
                     mFragments[FOURTH]);
         } else {
             // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
-
             // 这里我们需要拿到mFragments的引用
             mFragments[FIRST] = firstFragment;
             mFragments[SECOND] = findFragment(HomeFragment.class);
