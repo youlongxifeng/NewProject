@@ -12,6 +12,8 @@ import com.company.project.android.mvp.BasePresenter;
 import com.company.project.android.mvp.BaseView;
 import com.company.project.android.ui.fragment.home.HomeFragment;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
@@ -27,7 +29,7 @@ import me.yokeyword.fragmentation.SupportFragment;
 public abstract class BaseMvpFragment<P extends BasePresenter> extends SupportFragment implements BaseView {
     protected P mPresenter;
     protected OnBackToFirstListener _mBackToFirstListener;
-
+    Unbinder mUnbinder;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -52,6 +54,7 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends SupportFr
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getlayoutId(), container, false);
+        mUnbinder = ButterKnife.bind(this, view);
         return view;
     }
 
@@ -70,6 +73,7 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends SupportFr
             mPresenter.detachView();
         }
         _mBackToFirstListener = null;
+        mUnbinder.unbind();
     }
 
     protected abstract P createPresenter();

@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+
+version = "0.1.9-beta3"
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName version
+    }
+    sourceSets{
+        main.res.srcDirs 'res', 'res-public'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //implementation rootProject.ext.dependencies["design"]
+    implementation 'com.android.support:design:27.1.1'
+
+}
