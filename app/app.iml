@@ -121,8 +121,8 @@
     <orderEntry type="library" name="com.squareup.okhttp3:logging-interceptor:3.10.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" name="android.arch.core:common:1.1.0@jar" level="project" />
-    <orderEntry type="library" name="com.android.support:transition-27.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test.espresso:espresso-core-3.0.2" level="project" />
+    <orderEntry type="library" name="com.android.support:transition-27.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-27.1.1" level="project" />
@@ -157,7 +157,11 @@
     <orderEntry type="library" name="com.android.support:support-media-compat-27.1.1" level="project" />
     <orderEntry type="library" name="io.reactivex.rxjava2:rxjava:2.1.14@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:27.1.1@jar" level="project" />
-    <orderEntry type="library" name="com.android.support:support-v4-27.1.1" level="project" />
     <orderEntry type="library" name="android.arch.core:runtime-1.1.0" level="project" />
+    <orderEntry type="library" name="com.android.support:support-v4-27.1.1" level="project" />
+    <orderEntry type="module" module-name="fragmentation_core" />
+    <orderEntry type="module" module-name="eventbus_activity_scope" />
+    <orderEntry type="module" module-name="fragmentation" />
+    <orderEntry type="module" module-name="fragmentation_swipeback" />
   </component>
 </module>

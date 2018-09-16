@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.company.project.android.R;
 import com.company.project.android.base.BaseActivity;
 import com.company.project.android.bean.Gank;
+import com.company.project.android.utils.LogUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -15,9 +16,8 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity<MainPresenter>
         implements MainContract.View {
+    private final static String TAG = MainActivity.class.getSimpleName();
 
-    @BindView(R.id.return_value_name)
-    TextView mRvNameTv;
 
     @Override
     public MainPresenter setPresenter() {
@@ -38,13 +38,13 @@ public class MainActivity extends BaseActivity<MainPresenter>
     @Override
     public void initDate() {
         mPresenter.getGank();
-   //     mPresenter.accessToken("f2a9d153188d87e18adc233ca8ee30da", "564f939a8f8a5befa67d62bdf79e6fa5");
+        //     mPresenter.accessToken("f2a9d153188d87e18adc233ca8ee30da", "564f939a8f8a5befa67d62bdf79e6fa5");
 
     }
 
     @Override
     public void setLogin(String active) {
-        mRvNameTv.setText(active);
+        LogUtils.i(TAG, active);
     }
 
     @Override

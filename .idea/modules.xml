@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NewProject.iml" filepath="$PROJECT_DIR$/NewProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extraModules/eventbus_activity_scope/eventbus_activity_scope.iml" filepath="$PROJECT_DIR$/extraModules/eventbus_activity_scope/eventbus_activity_scope.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extraModules/extraModules.iml" filepath="$PROJECT_DIR$/extraModules/extraModules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extraModules/fragmentation/fragmentation.iml" filepath="$PROJECT_DIR$/extraModules/fragmentation/fragmentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extraModules/fragmentation_core/fragmentation_core.iml" filepath="$PROJECT_DIR$/extraModules/fragmentation_core/fragmentation_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extraModules/fragmentation_swipeback/fragmentation_swipeback.iml" filepath="$PROJECT_DIR$/extraModules/fragmentation_swipeback/fragmentation_swipeback.iml" />
+    </modules>
+  </component>
+</project>
