@@ -87,4 +87,18 @@
         "On the layout level, design your app layout to minimize opportunities for interference. "
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"</string>
+
+    <string name="login_name">用户名</string>
+    <string name="login_pwd">密码</string>
+    <string name="login_pwd_repeat">重复密码</string>
+    <string name="login_code">验证码</string>
+    <string name="login_login">登 录</string>
+    <string name="login_register">注 册</string>
+    <string name="login_no_register">还没有帐号？</string>
+    <string name="login_registered">已有帐号？</string>
+    <string name="login_forget">忘记密码</string>
+    <string name="login_email">邮箱地址</string>
+    <string name="reg_suc_toast">注册成功...为了保证可持续化登录，需要您再次登录O(∩_∩)O~</string>
+
+    <string name="loading_wait">加载中...</string>
 </resources>

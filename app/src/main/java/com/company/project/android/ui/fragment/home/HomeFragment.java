@@ -12,7 +12,7 @@ import com.company.project.android.mvp.BasePresenter;
  * Created by xiexie on 2018/9/16.
  */
 
-public class HomeFragment extends BaseMvpFragment {
+public class HomeFragment extends BaseMvpFragment<HomePresenter> {
 
     public static HomeFragment newInstance() {
         Bundle args = new Bundle();
@@ -22,8 +22,8 @@ public class HomeFragment extends BaseMvpFragment {
     }
 
     @Override
-    protected BasePresenter createPresenter() {
-        return null;
+    protected HomePresenter createPresenter() {
+        return new HomePresenter();
     }
 
     @Override

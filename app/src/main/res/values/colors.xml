@@ -3,6 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="theme_color_primary">#f44336</color>
+    <color name="theme_color_primary_dark">#f44336</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
     <color name="tab_unselect">#c9c9c9</color>
     <color name="bg_btn">#dadada</color>
+    <color name="normal_txt">#4D4D4D</color>
+    <color name="grey">#A0A0A0</color>
 </resources>

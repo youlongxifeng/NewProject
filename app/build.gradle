@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.discovery.protection.project"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -53,4 +53,7 @@ dependencies {
     implementation project(':extraModules:eventbus_activity_scope')
     implementation 'org.greenrobot:eventbus:latest.release'//latest.release当前最新版本
     annotationProcessor "org.greenrobot:eventbus-annotation-processor:latest.release"
+
+    //MagicaSakura多主题框架
+    implementation project(':extraModules:magicasakura')
 }

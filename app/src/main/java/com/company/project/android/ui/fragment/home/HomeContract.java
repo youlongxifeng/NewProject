@@ -16,7 +16,7 @@ import okhttp3.RequestBody;
  * Created by xiexie on 2018/9/16.
  */
 
-public class HomeContract {
+public interface HomeContract {
     interface View extends BaseView {
 
         void setLogin(String active);
